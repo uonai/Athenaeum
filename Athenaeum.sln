@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Athenaeum", "Athenaeum\Athenaeum.csproj", "{AAEBF12C-64BE-4A16-93AD-3A4C47BFB843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Athenaeum", "Athenaeum\Athenaeum.csproj", "{AAEBF12C-64BE-4A16-93AD-3A4C47BFB843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AthenaeumLibrary", "AthenaeumLibrary\AthenaeumLibrary.csproj", "{EBD56B82-6F9E-4745-A329-177175910593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AthenaeumLibrary", "AthenaeumLibrary\AthenaeumLibrary.csproj", "{EBD56B82-6F9E-4745-A329-177175910593}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "AthenaeumDatabase", "AthenaeumDatabase\AthenaeumDatabase.sqlproj", "{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,12 @@ Global
 		{EBD56B82-6F9E-4745-A329-177175910593}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBD56B82-6F9E-4745-A329-177175910593}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBD56B82-6F9E-4745-A329-177175910593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBAF0CB0-3458-4184-A699-C77BAE1A0BBF}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
