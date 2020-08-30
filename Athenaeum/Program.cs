@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Data.SqlClient;
 using System.Reflection;
 
 namespace Athenaeum
@@ -13,45 +14,23 @@ namespace Athenaeum
         public static void Main(string[] args)
         {
 
-            var host = CreateWebHostBuilder(args).Build();
-            host.Run();
 
+            DataAccess.GetUsers();
             Message.WelcomeMessage("Welcome to Athenaeum.");
             Console.WriteLine("Type --help for commands.");
             Message.IntroMessage();
-            string command;
-            command = Console.ReadLine();
-
-            if (command == "--addBook")
+            while (true)
             {
-                Message.AddBookMessage();
-            }
-            else if (command == "--addUser")
-            {
-                Message.AddUserMessage();
-            }
-            else { Message.NotRecognizedMessage(); }
+                string command;
+                command = Console.ReadLine();
+                if (command == "exit")
+                {
+                    break;
+                }
+                Command.Decipher(command);
+            }                    
         }
 
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args) => WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
-
-        public static void SeedDatabase(IWebHost host)
-        {
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                try
-                {
-                    var context = services.GetRequiredService<MyDbContext>();
-                    DbInitializer.Initialize(context, services);
-                }
-                catch (Exception)
-                {
-                    var logger = services.GetRequiredService<ILogger<Program>>();
-                    logger.LogError("An error occured seeding the db");
-                }
-            }
-        }
 
         public static BookModel GetBook()
         {

@@ -27,11 +27,13 @@ namespace Athenaeum
 
         public static void NotRecognizedMessage()
         {
-            Console.WriteLine("not recognized message");
+            Console.WriteLine("Message not recognized. Type --help for commands");
         }
         public static void HelpMessage()
         {
-            Console.WriteLine("help messages");
+            Console.WriteLine("Available commands:");
+            Console.WriteLine("--addUser");
+            Console.WriteLine("--addBook");
         }
         public static void AddUserMessage()
         {
@@ -39,7 +41,7 @@ namespace Athenaeum
         }
         public static void AddBookMessage()
         {
-            Console.WriteLine("add book message");
+            Console.WriteLine("Add Book information --");
         }
     }
 }
