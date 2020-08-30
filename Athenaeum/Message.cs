@@ -20,10 +20,6 @@ namespace Athenaeum
 ";
             Console.WriteLine(book);
         }
-        public static void IntroMessage()
-        {
-            Console.WriteLine("list of messages");
-        }
 
         public static void NotRecognizedMessage()
         {

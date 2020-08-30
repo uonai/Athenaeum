@@ -13,12 +13,8 @@ namespace Athenaeum
     {
         public static void Main(string[] args)
         {
-
-
-            DataAccess.GetUsers();
             Message.WelcomeMessage("Welcome to Athenaeum.");
             Console.WriteLine("Type --help for commands.");
-            Message.IntroMessage();
             while (true)
             {
                 string command;
@@ -29,29 +25,6 @@ namespace Athenaeum
                 }
                 Command.Decipher(command);
             }                    
-        }
-
-
-        public static BookModel GetBook()
-        {
-            return new BookModel
-            {
-                Title = "Test",
-                Author = "Test",
-                Rating = 1,
-                Review = "Test",
-                Notes = "Test",
-                Category = "Test"
-            };       
-        }
-
-        public static UserModel AddUser()
-        {
-            return new UserModel
-            {
-                Name = "Test",
-                Notes = "Test"
-            };
         }
     }
 }

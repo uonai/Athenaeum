@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Books]
 (
-	[Id] INT NOT NULL PRIMARY KEY,
+	[Id] INT IDENTITY(1,1) NOT NULL PRIMARY KEY CLUSTERED,
 	[Title] VARCHAR (50),
 	[Author] VARCHAR (50),
 	[Rating] INT,
