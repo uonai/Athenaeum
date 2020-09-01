@@ -33,6 +33,7 @@ namespace Athenaeum
                 Message.HelpMessage();
             }
             else { Message.NotRecognizedMessage(); }
+            return;
         }
 
         public static void AddBook()
