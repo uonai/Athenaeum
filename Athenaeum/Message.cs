@@ -29,7 +29,10 @@ namespace Athenaeum
         {
             Console.WriteLine("Available commands:");
             Console.WriteLine("--addUser");
+            Console.WriteLine("--getUsers");
             Console.WriteLine("--addBook");
+            Console.WriteLine("--getBooks");
+            Console.WriteLine("--deleteBook");
         }
         public static void AddUserMessage()
         {
@@ -38,6 +41,10 @@ namespace Athenaeum
         public static void AddBookMessage()
         {
             Console.WriteLine("Add Book information --");
+        }
+        public static void DeleteBookMessage()
+        {
+            Console.WriteLine("Delete Book information --");
         }
     }
 }

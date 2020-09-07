@@ -13,6 +13,7 @@ namespace Athenaeum
                 conn.ConnectionString = "Server=DESKTOP-32N87F3\\MSSQLSERVER01;Database=AthenaeumDatabase;Trusted_Connection=True;MultipleActiveResultSets=true;";
                 conn.Open();
 
+
                 SqlCommand command = new SqlCommand("SELECT * FROM Users", conn);
 
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -35,9 +36,9 @@ namespace Athenaeum
             {
                 conn.ConnectionString = "Server=DESKTOP-32N87F3\\MSSQLSERVER01;Database=AthenaeumDatabase;Trusted_Connection=True;MultipleActiveResultSets=true;";
                 conn.Open();
-             
+
                 SqlCommand command = new SqlCommand("SELECT * FROM Users WHERE Id = @0", conn);
-             
+
                 command.Parameters.Add(new SqlParameter("0", 1));
 
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -54,9 +55,9 @@ namespace Athenaeum
                 Console.Clear();
 
                 /* In this section there is an example of the Exception case 
-  * Thrown by the SQL Server, that is provided by SqlException  
-  * Using that class object, we can get the error thrown by SQL Server. 
-  * In my code, I am simply displaying the error! */
+                * Thrown by the SQL Server, that is provided by SqlException  
+                * Using that class object, we can get the error thrown by SQL Server. 
+                * In my code, I am simply displaying the error! */
                 Console.WriteLine("Now the error trial!");
 
                 // try block  
@@ -138,6 +139,26 @@ namespace Athenaeum
                 insertCommand.Parameters.Add(new SqlParameter("2", book.Author));
 
                 Console.WriteLine("Commands executed! Total rows affected are " + insertCommand.ExecuteNonQuery());
+                Console.WriteLine("Done! Press enter to move to the next step");
+                Console.ReadLine();
+                Console.Clear();
+            }
+        }
+
+        public static void DeleteBook(BookModel book)
+        {
+            using (SqlConnection conn = new SqlConnection())
+            {
+                conn.ConnectionString = "Server=DESKTOP-32N87F3\\MSSQLSERVER01;Database=AthenaeumDatabase;Trusted_Connection=True;MultipleActiveResultSets=true;";
+                conn.Open();
+
+                Console.WriteLine("DELETE FROM command");
+
+                SqlCommand deleteCommand = new SqlCommand("DELETE FROM Books WHERE Title = @Title", conn);
+
+                deleteCommand.Parameters.Add(new SqlParameter("@Title", book.Title));
+
+                Console.WriteLine("Commands executed! Total rows affected are " + deleteCommand.ExecuteNonQuery());
                 Console.WriteLine("Done! Press enter to move to the next step");
                 Console.ReadLine();
                 Console.Clear();

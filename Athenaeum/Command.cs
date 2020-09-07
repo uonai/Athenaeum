@@ -18,6 +18,11 @@ namespace Athenaeum
                 Message.AddBookMessage();
                 AddBook();
             }
+            else if (command.Equals("--deleteBook"))
+            {
+                Message.DeleteBookMessage();
+                DeleteBook();
+            }
             else if (command.Equals("--addUser"))
             {
                 Message.AddUserMessage();
@@ -55,6 +60,28 @@ namespace Athenaeum
             {
                 DataAccess.AddBook(book);
                 Console.WriteLine("Item Saved");
+
+                return;
+            }
+            else return;
+        }
+
+        public static void DeleteBook()
+        {
+            var book = new BookModel
+            {
+                Title = "",
+            };
+
+            Console.WriteLine("Book Title:");
+            book.Title = Console.ReadLine();
+            Console.WriteLine("Is this Correct? Would you like to delete this book [Y / N]");
+            Console.WriteLine(book.Title);
+            string confirmation = Console.ReadLine();
+            if (confirmation.ToLower().Equals("y"))
+            {
+                DataAccess.DeleteBook(book);
+                Console.WriteLine("Item Deleted");
 
                 return;
             }
